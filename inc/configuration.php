@@ -1,0 +1,25 @@
+<?php 
+class Sql {
+
+	public $conn;
+
+	public function __contruct(){
+		return $this->conn = mysqli_connect("127.0.0.1", "root", "1234", "hcode_shop");
+
+	}
+	public function query($string_query){
+		return mysqli_query($this->conn, $string_query);
+
+	}
+
+	public function __destruct(){
+
+		mysqli_close($this->conn);
+
+	}
+
+
+}
+
+
+?>
